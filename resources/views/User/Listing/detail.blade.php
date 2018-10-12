@@ -79,7 +79,7 @@
                                         </a>
                                     </li>   
                                     <li>
-                                       <?php $link = "https://www.facebook.com/sharer/sharer.php?u=https://listing.vn/listing/1" ?>
+                                       <?php $link = "https://www.facebook.com/sharer/sharer.php?u=https://listing.vn/listing/".$place->id ?>
                                     </li>       
                                 </ul>
                                 <p>{{ $place->description }}</p>
@@ -454,6 +454,8 @@
     });
     // Preview Image phan` Comments
  </script>
+
+
 @endsection
 
 @section('modal')

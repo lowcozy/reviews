@@ -1,20 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="http://www.facebook.com/2008/fbml"
->
-    <meta property="og:title" content="The Rock"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/>
-    <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
-    <meta property="og:site_name" content="IMDb"/>
-    <meta property="fb:admins" content="USER_ID"/>
-    <meta property="og:description"
-    content="A group of U.S. Marines, under command of
-               a renegade general, take over Alcatraz and
-               threaten San Francisco Bay with biological
-               weapons."/>
+<html lang="{{ app()->getLocale() }}" prefix="og: http://ogp.me/ns#">
+   
+    <meta property="og:description" content="South Jersey Aerial Photography is South Jersey's premier aerial photography and aerial videography company. Fully licensed and insured. Contact us today!"/>
+    <meta property="og:image" content="https://media-cdn.tripadvisor.com/media/photo-s/08/20/75/0d/hotel-contessa.jpg" />
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
