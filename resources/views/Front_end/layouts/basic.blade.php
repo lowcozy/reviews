@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
+<html lang="{{ app()->getLocale() }}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <meta property="og:title" content="The Rock"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/>
+    <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
+    <meta property="og:site_name" content="IMDb"/>
+    <meta property="fb:admins" content="USER_ID"/>
+    <meta property="og:description"
+    content="A group of U.S. Marines, under command of
+               a renegade general, take over Alcatraz and
+               threaten San Francisco Bay with biological
+               weapons."/>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
