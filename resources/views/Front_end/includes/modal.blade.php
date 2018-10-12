@@ -9,13 +9,13 @@
                             @csrf
                             <h3 class="title-formlogin">Log in</h3>
                             <span class="input-login icon-form"><input 
-                             id = "emailLogin"
+                             id = "emailLogin"  style="color:black;"
                              type="text" placeholder="Your Email*" name="email" required="required"><i class="fa fa-user"></i>
                             </span>
 
                             <span class="input-login icon-form"><input
-                             id = "passwordLogin"
-                             type="text" placeholder="Password*" name="password" required="required"><i class="fa fa-lock"></i></span>
+                             id = "passwordLogin"  style="color:black;"
+                             type="password" placeholder="Password*" name="password" required="required"><i class="fa fa-lock"></i></span>
                             <div class="flat-fogot clearfix">
                                 
                                 <p style="color:red; float:left; display: none;" class="error errorEmail"></p> 
@@ -88,22 +88,22 @@
                         <form class="form-login form-listing" action="#" method="post">
                              @csrf
                             <h3 class="title-formlogin">Sign Up</h3>
-                            <span class="input-login icon-form"><input type="text" placeholder="Your First Name*" 
+                            <span class="input-login icon-form"><input type="text" placeholder="Your First Name*"   style="color:black;"
                                 name="first_name" id ="first_name"
                                 required="required"><i class="fa fa-user"></i></span>
-                             <span class="input-login icon-form"><input type="text" placeholder="Your Last Name*" 
+                             <span class="input-login icon-form"><input type="text" placeholder="Your Last Name*"   style="color:black;"
                                 name="last_name" id ="last_name"
                                 required="required"><i class="fa fa-user"></i></span>
 
-                            <span class="input-login icon-form"><input type="text" placeholder="E-mail*" 
+                            <span class="input-login icon-form"><input type="text" placeholder="E-mail*"  style="color:black;"
                                 id = "emailRegister"
                                 name="email" required="required"><i class="fa fa-envelope-o"></i></span>
 
-                            <span class="input-login icon-form"><input type="text" placeholder="Password*"
+                            <span class="input-login icon-form"><input type="password" placeholder="Password*"  style="color:black;"
                                 id = "passwordRegister"
                              name="password" required="required"><i class="fa fa-lock"></i></span>
 
-                             <span class="input-login icon-form"><input type="text" placeholder="Repeat Password*"
+                             <span class="input-login icon-form"><input type="password" placeholder="Repeat Password*"  style="color:black;"
                                 id="password-confirm" name="password_confirmation"
                                required="required"><i class="fa fa-lock"></i></span>
                             <div>

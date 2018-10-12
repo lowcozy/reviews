@@ -57,31 +57,33 @@
 
                             <p class="input-info">
                                 <label
+                                style="color:black;"
                                  class="nhan">Name*</label>
                                 <input value="{{ old('name') }}" type="text" name="name" id="title" required >
                             </p>
                             <p class="input-info">
                                 <label class="nhan">Description*</label>
-                                <textarea 
+                                <textarea  style="color:black;"
                                 class="" tabindex="4" name="description" required>{{ old('description') }}</textarea>
                             </p>
 
                             <p class="input-info">
                                 	<label class="nhan">Phone*</label>
-                                    <input
+                                    <input  style="color:black;"
                                     value="{{ old('phone') }}"
                                      type="text" name="phone" placeholder="Phone" required>
                             </p>
 
                             <p class="input-info">
                                 	<label class="nhan">Website*</label>
-                                    <input type="text" value="{{ old('website') }}"
+                                    <input
+                                       style="color:black;"   type="text" value="{{ old('website') }}"
                                      name="website" placeholder="Website" required>
                             </p>
 
                             <p class="input-info icon">
                                 <label class="nhan">Categories*</label>
-                                <select name="category_id" class=" dropdown_sort">
+                                <select  style="color:black;"  name="category_id" class=" dropdown_sort">
                                 <option value="0">Select Categories</option>		
     							@foreach($parent as $item)
   								<optgroup label="{{ $item->name }}">
@@ -107,7 +109,7 @@
 
                              <p class="input-info icon">
                                 <label class="nhan">City*</label>
-                                 <select class="dropdown_sort" name="city" id="city" onchange="getDistrict()">
+                                 <select  style="color:black;" class="dropdown_sort" name="city" id="city" onchange="getDistrict()">
                                                     <option value="0">Select City</option>
                                                     @foreach ($cities as $city)
                                                     <option value="{{ $city->name }}"
@@ -129,7 +131,7 @@
 
                              <p class="input-info icon">
                                 <label class="nhan">District*</label>
-                                <select name="district" id="district" class=" dropdown_sort">
+                                <select  style="color:black;" name="district" id="district" class=" dropdown_sort">
                                     <option value="">Select District</option>
                                 </select>
                                 <i class="fa fa-angle-down"></i>
