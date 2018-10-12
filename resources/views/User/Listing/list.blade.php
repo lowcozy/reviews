@@ -97,7 +97,9 @@
                             </h5>
                             <!-- <form novalidate="" class="filter-form clearfix" id="filter-form" method="get" action="{{ route('listing.search') }}"> -->
                                 <p class="book-notes">                                      
-                                    <input type="text" placeholder="Search by Name" name="name" required=""
+                                    <input
+                                    style="color: black;"
+                                     type="text" placeholder="Search by Name" name="name" required=""
 
                                     @if(isset($_GET['name']))
                                         value= {{ $_GET['name'] }} 
