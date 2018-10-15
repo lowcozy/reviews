@@ -238,7 +238,8 @@
     <script src="{{ asset('javascript/jquery-waypoints.js') }}"></script> 
     <script src="{{ asset('javascript/jquery-countTo.js') }}"></script>  
     <script src="{{ asset('javascript/gmap3.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNHxKOU7potiYY9ayE1rkAwwR6xlBtxFA&region=GB&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56R0C2n_rs_oJajhK1s_iGffr3zPjjo8
+&region=GB&callback=initMap"></script>
     <script src="{{ asset('javascript/jquery.cookie.js') }}"></script>
      <script src="{{ asset('javascript/bootstrap-datetimepicker.js') }}"></script>
     <script src="{{ asset('javascript/bootstrap-datetimepicker.fr.js') }}"></script>
