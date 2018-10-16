@@ -89,7 +89,6 @@ class ListingController extends Controller
     //show detail lisiting
     public function detail($id)
     {
-
         $place = Place::find($id);
         if($place)
         {

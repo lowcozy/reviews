@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
+<html lang="{{ app()->getLocale() }}" prefix="og: http://ogp.me/ns#">
+   
+    <meta property="og:description" content="South Jersey Aerial Photography is South Jersey's premier aerial photography and aerial videography company. Fully licensed and insured. Contact us today!"/>
+    <meta property="og:image" content="https://media-cdn.tripadvisor.com/media/photo-s/08/20/75/0d/hotel-contessa.jpg" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
