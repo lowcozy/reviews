@@ -98,7 +98,7 @@
                                     >Add Review</button>
                                     <button style="margin-left: 10px; background-color:#3b5998;" onclick="window.open('{{ $link }}', '_blank');">Share to Face</button>
                              </p><br>
-                                 
+                                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Flisting.vn%2Flisting%2F2&layout=button&size=small&mobile_iframe=true&appId=1121185011376046&width=0&height=0" width="0" height="0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                             <div class="list-comment">
                                 <h3 class="title-listing">{{ $count_comment }} Comments</h3>
                                 <div class="comments-area">
