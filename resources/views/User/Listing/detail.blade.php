@@ -79,10 +79,7 @@
                                         </a>
                                     </li>   
                                     <li>
-                                        <div class="social-links">
-                                            <span>Share:</span>
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                        </div>
+                                       <?php $link = "https://www.facebook.com/sharer/sharer.php?u=https://listing.vn/listing/".$place->id ?>
                                     </li>       
                                 </ul>
                                 <p>{{ $place->description }}</p>
@@ -99,8 +96,9 @@
                              <p class="form-submit">                 
                                     <button onclick="addReview()" type="button" class="button"
                                     >Add Review</button>
+                                    <button style="margin-left: 10px; background-color:#3b5998;" onclick="window.open('{{ $link }}', '_blank');">Share to Face</button>
                              </p><br>
-                                 
+                                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Flisting.vn%2Flisting%2F2&layout=button&size=small&mobile_iframe=true&appId=1121185011376046&width=0&height=0" width="0" height="0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                             <div class="list-comment">
                                 <h3 class="title-listing">{{ $count_comment }} Comments</h3>
                                 <div class="comments-area">
@@ -231,6 +229,7 @@
 
 @section('js_lib')
      <!-- Javascript -->
+    <script src="{{ asset('js/share.js') }}"></script>
     <script src="{{ asset('javascript/jquery.min.js') }}"></script>
     <script src="{{ asset('javascript/tether.min.js') }}"></script>
     <script src="{{ asset('javascript/bootstrap.min.js') }}"></script> 
@@ -238,8 +237,7 @@
     <script src="{{ asset('javascript/jquery-waypoints.js') }}"></script> 
     <script src="{{ asset('javascript/jquery-countTo.js') }}"></script>  
     <script src="{{ asset('javascript/gmap3.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56R0C2n_rs_oJajhK1s_iGffr3zPjjo8
-&region=GB&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56R0C2n_rs_oJajhK1s_iGffr3zPjjo8&region=GB&callback=initMap"></script>
     <script src="{{ asset('javascript/jquery.cookie.js') }}"></script>
      <script src="{{ asset('javascript/bootstrap-datetimepicker.js') }}"></script>
     <script src="{{ asset('javascript/bootstrap-datetimepicker.fr.js') }}"></script>
@@ -456,6 +454,8 @@
     });
     // Preview Image phan` Comments
  </script>
+
+
 @endsection
 
 @section('modal')

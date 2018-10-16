@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/test', function () {
-    return view('test');
-});
-
 Route::get('/', function () {
     return redirect()->route('home');
 });
@@ -94,4 +89,3 @@ Route::group(['prefix' => 'ajax'], function()
 Route::get('list-listing', 'User\ListingController@list')->name('list-listing');
 Route::get('search',['as'=>'listing.search','uses'=>'User\ListingController@search']);
 Route::get('listing/{id}',['as'=>'listing.detail','uses'=>'User\ListingController@detail']);
-

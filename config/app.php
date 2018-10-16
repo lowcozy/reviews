@@ -160,6 +160,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
+        Torann\LaravelMetaTags\MetaTagsServiceProvider::class,
 
     ],
 
@@ -212,6 +214,7 @@ return [
         'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+        'MetaTag'   => Torann\LaravelMetaTags\Facades\MetaTag::class,
         
     ],
 
