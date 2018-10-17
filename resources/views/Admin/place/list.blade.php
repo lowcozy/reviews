@@ -38,8 +38,6 @@
 	                                                        <option value="1" selected="">1</option>
 	                                                        <option value="2">2</option>
 	                                                        <option value="3">3</option>
-	                                                        <option value="0">All</option>
-	                                                       
 	                                                    </select>
                                                 	</div>
                                                 </div>
@@ -144,4 +142,41 @@
                                 </div>
                             </div>
                         </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+	//load ajax
+	 function load_ajax(page){
+	 	// get limit 
+	 	// get category 
+	 	// get sort 
+	 	// get status 
+
+        $.ajax({
+            url : '{{ route('admin.category.table') }}',
+            type : "get",
+            dataType:"text",
+            data : {
+                '_token' : "{{ csrf_token() }}",
+                page : page,
+                limit : limit,
+                keyword : keyword,
+                column : column,
+                sort : sort
+            },
+            success : function (result){
+                //alert(result)
+                $('#result').html(result);
+            },
+            error: function(xhr, status, error) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+
+	//list event
+
+</script>
+	
 @endsection
