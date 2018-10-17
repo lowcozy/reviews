@@ -138,7 +138,7 @@
                                         <label class="col-sm-2 label-on-left">Giờ mở cửa</label>
                                         <div class="col-sm-10">
                                             <div class="form-group">
-                                                <input type="text" class="form-control timepicker" value="14:00" />
+                                                <input type="text"name="open_h" class="form-control timepicker" value="14:00" />
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +147,7 @@
                                         <label class="col-sm-2 label-on-left">Giờ đóng cửa</label>
                                         <div class="col-sm-10">
                                             <div class="form-group">
-                                                <input type="text" class="form-control timepicker" value="15:00" />
+                                                <input type="text" name="close_h" class="form-control timepicker" value="15:00" />
                                             </div>
                                         </div>
                                     </div>

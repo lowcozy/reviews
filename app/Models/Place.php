@@ -55,4 +55,10 @@ class Place extends Model
       //echo '<br/>'.$km;
       return $km;
   }
+
+  public static function search($params =[])
+  {
+    $places = self::select('places.*');
+     return $places->paginate(1);
+  }
 }

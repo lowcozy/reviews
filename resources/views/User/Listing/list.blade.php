@@ -125,7 +125,7 @@
                                 <p class="location">Location <i class="ion-location float-right"></i></p>
                                 <p id="distance" class="input-location form-filter">
                                     <span class="filter">
-                                        <input id="ex8" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="10"
+                                        <input id="ex8" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="100"
                                          name = "distance"
                                          data-slider-step="1" 
                                          @if(isset($_GET['distance']))

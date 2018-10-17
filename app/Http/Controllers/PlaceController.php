@@ -31,6 +31,18 @@ class PlaceController extends Controller
     		 'services' => $services
     		]);
     }
+
+    // hien thi danh sach dia diem 
+    public function list()
+    {
+        $places = Place::search();
+        $categories = Category::getParrent(0);
+        return view('Admin.place.list', [
+            'places' => $places ,
+            'categories' => $categories
+        ]);
+    }
+
     public function save(AddListingForm $request)
     {
     	 // them 1 dia diem moi'
@@ -47,8 +59,8 @@ class PlaceController extends Controller
     	$data->phone = $request->phone;
     	$data->website = $request->website;
     	$data->description = $request->description;
-    	$open =  $request->open_h.":".$request->open_m.":00";
-    	$close = $request->close_h.":".$request->close_m.":00";
+    	$open =  '01:00:00';
+    	$close = '07:00:00';
         $data->count_views = 0;
     	$data['open'] = $open;
     	$data['close'] = $close;

@@ -42,6 +42,12 @@
                                         <span class="sidebar-normal"> Tạo mới </span>
                                     </a>
                                 </li>
+                                 <li{{ (Route::is('admin.place.list')) ? ' class=active' : '' }}>
+                                    <a href="{{ route('admin.place.list') }}">
+                                        <span class="sidebar-mini"> LIST </span>
+                                        <span class="sidebar-normal"> Danh Sách Địa Điểm </span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>

@@ -85,6 +85,7 @@
         return (isNaN(numb)) ? param : numb;
         
     }
+    
     function getKeyWordUrl() {
         let searchParams = new URLSearchParams(window.location.search);
         var param = null;
