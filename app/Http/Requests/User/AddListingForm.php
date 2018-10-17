@@ -27,11 +27,11 @@ class AddListingForm extends FormRequest
               'name' => 'required|min:3',
               'lat' => 'required|numeric',
               'lng' => 'required|numeric',
-               'category_id' => 'required|not_in:0',
-               'service' => 'required',
+              'category_id' => 'required|not_in:0',
+              'service' => 'required',
               'city' => 'required|not_in:0',
-            'image' => 'required',
-            'image.*' => 'mimes:jpeg,bmp,png,jpg'
+              'image' => 'required',
+              'image.*' => 'mimes:jpeg,bmp,png,jpg'
 
         ];
     }

@@ -57,9 +57,10 @@
 
                             <p class="input-info">
                                 <label
-                                style="color:black;"
                                  class="nhan">Name*</label>
-                                <input value="{{ old('name') }}" type="text" name="name" id="title" required >
+                                <input 
+                                 style="color:black;"
+                                 value="{{ old('name') }}" type="text" name="name" id="title" required >
                             </p>
                             <p class="input-info">
                                 <label class="nhan">Description*</label>
@@ -151,10 +152,7 @@
 	                                    </div>
                                 	</div>
                             	@endforeach 
-
-                            	
-                            
-                        </div>   
+                            </div>   
                         @if ($errors->has('service'))
                                     <p style="color: red">
                                         <strong>{{ $errors->first('service') }}</strong>

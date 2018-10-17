@@ -14,12 +14,12 @@ class ServicesTableSeeder extends Seeder
     {
         $data = array(
         	'Wifi',
-			'Online Reservation',
+			'Reservation',
 			'Events',
-			 'Host',
-			'Gaming House',
+			'Host',
+			'Gaming',
 			'Event',
-			'Park Center'
+			'ParkCenter'
         );
 
         foreach ($data as $item) {

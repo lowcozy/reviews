@@ -75,7 +75,7 @@
 <!-- Sliders Plugin, full documentation here: https://refreshless.com/nouislider/ -->
 <script src="/assets/js/nouislider.min.js"></script>
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCEYQ2lICr7wFsD_GYkhdiJm1a4klozEQ">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56R0C2n_rs_oJajhK1s_iGffr3zPjjo8&libraries=places">
 </script>
 <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
 <script src="/assets/js/jquery.select-bootstrap.js"></script>

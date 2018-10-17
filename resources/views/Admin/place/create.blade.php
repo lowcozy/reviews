@@ -17,16 +17,21 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
-                            <form method="get" action="/" class="form-horizontal">
-                                {{ csrf_field() }} 
+                            <form method="post" action="{{ route('admin.place.save') }}" 
+                            class="form-horizontal" enctype="multipart/form-data">
+                                @csrf 
                                 <div class="card-content">
                                     <div class="row">
                                         <label class="col-sm-2 label-on-left">Tên</label>
                                         <div class="col-sm-10">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <input type="text" class="form-control" value>
-                                                <span class="help-block">A block of help text that breaks onto a new line.</span>
+                                                  <input 
+                                                     class="form-control"
+                                                     style="color:black;"
+                                                     value="{{ old('name') }}" type="text" 
+                                                     name="name" required>
+                                                <span class="help-block">Text your name of place.</span>
                                             </div>
                                         </div>
                                     </div>
@@ -34,20 +39,25 @@
                                         <label class="col-sm-2 label-on-left">Thành Phố</label>
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <select class="form-control" id="city" onchange="getDistrict()">
-                                                    
-                                                    <option>Chọn Thành Phố</option>
+                                                <select class="form-control" id="city" onchange="getDistrict()" name="city">
+                                                    <option value="0">Chọn Thành Phố</option>
                                                     @foreach ($cities as $city)
-                                                    <option>{{ $city->name }}</option>
+                                                     <option value="{{ $city->name }}"
+                                                        {{ (old("city") == $city->name ? "selected":"") }}>
+                                                        {{ $city->name }}</option>
                                                     @endforeach
                                                 </select>
-                                               
+                                                @if ($errors->has('city'))
+                                                        <p style="color: red">
+                                                            <strong>{{ $errors->first('city') }}</strong>
+                                                        </p> <br>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <div class="form-group">
-                                                 <select class="form-control" id="district">
-                                                    <option>Chọn Huyện</option>
+                                                 <select class="form-control" name="district" id="district">
+                                                    <option value="">Chọn Huyện</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -66,7 +76,7 @@
                                         <div class="col-sm-10">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <select class="form-control" name='parent_cat'>
+                                                <select class="form-control" name='category_id'>
                                                     <option value="-1">Chọn loại hình</option>
                                                     @foreach ($cats as $cat)
                                                     <optgroup label="{{ $cat->name }}">
@@ -80,6 +90,11 @@
                                                     </optgroup>
                                                     @endforeach
                                                 </select>
+                                                  @if ($errors->has('category_id'))
+                                                        <p style="color: red">
+                                                            <strong>{{ $errors->first('category_id') }}</strong>
+                                                        </p> <br>
+                                                  @endif
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +103,8 @@
                                         <div class="col-sm-10">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <textarea class="form-control"></textarea>
+                                                <textarea style="color:black;"
+                                                    class="form-control" name="description" required>{{ old('description') }}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +113,10 @@
                                         <div class="col-sm-10">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <input type="text" class="form-control" value>
+                                                 <input  style="color:black;"
+                                                    class="form-control"
+                                                    value="{{ old('phone') }}"
+                                                     type="text" name="phone" placeholder="Phone" required>
                                             </div>
                                         </div>
                                     </div>
@@ -106,63 +125,75 @@
                                         <div class="col-sm-10">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <input type="text" class="form-control" value>
+                                                 <input
+                                                   class="form-control"
+                                                   style="color:black;"   type="text" 
+                                                   value="{{ old('website') }}"
+                                                   name="website" placeholder="Website" required>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <label class="col-sm-2 label-on-left">Bắt đầu</label>
+                                        <label class="col-sm-2 label-on-left">Giờ mở cửa</label>
                                         <div class="col-sm-10">
                                             <div class="form-group">
-
                                                 <input type="text" class="form-control timepicker" value="14:00" />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <label class="col-sm-2 label-on-left">Checkboxes and radios</label>
-                                        <div class="col-sm-10 checkbox-radios">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" name="optionsCheckboxes"> First Checkbox
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" name="optionsCheckboxes"> Second Checkbox
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" checked="true"> First Radio
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios"> Second Radio
-                                                </label>
+
+                                     <div class="row">
+                                        <label class="col-sm-2 label-on-left">Giờ đóng cửa</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control timepicker" value="15:00" />
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row">
-                                        <label class="col-sm-2 label-on-left">Inline checkboxes</label>
+                                        <label class="col-sm-2 label-on-left">Dịch vụ</label>
                                         <div class="col-sm-10">
-                                            <div class="checkbox checkbox-inline">
+                                           <!--  <div class="checkbox checkbox-inline">
                                                 <label>
-                                                    <input type="checkbox" name="optionsCheckboxes">a
+                                                    <input type="checkbox" name="optionsCheckboxes">aasdasd
                                                 </label>
+                                            </div> -->
+                                            @foreach($services as $service)
+                                                    <div class="checkbox checkbox-inline">
+                                                        <label style="color:#555;">
+                                                                <input type="checkbox" id="{{ $service->name }}" name="service[]"
+                                                                value="{{ $service->id }}" 
+                                                                >{{ $service->name }}
+                                                        </label>
+                                                    </div>
+                                            @endforeach 
+                                             @if ($errors->has('service'))
+                                                        <br/>
+                                                        <p style="color: red">
+                                                            <strong>{{ $errors->first('service') }}</strong>
+                                                        </p>
+                                            @endif   <br/>
+                                            
+                                        </div>
+                                    </div>
+
+
+
+                                      <div class="row">
+                                        <label class="col-sm-2 label-on-left">Ảnh</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label> <br>
+                                                <input type="file" name="image[]" id="image" multiple />
                                             </div>
-                                            <div class="checkbox checkbox-inline">
-                                                <label>
-                                                    <input type="checkbox" name="optionsCheckboxes">b
-                                                </label>
-                                            </div>
-                                            <div class="checkbox checkbox-inline">
-                                                <label>
-                                                    <input type="checkbox" name="optionsCheckboxes">c
-                                                </label>
-                                            </div>
+                                                @if ($errors->has('image'))
+                                                        <p style="color: red">
+                                                            <strong>{{ $errors->first('image') }}</strong>
+                                                        </p> <br>
+                                                 @endif
+                                             <div id="preview"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -178,6 +209,11 @@
                                 <input id="pac-input" class="controls" type="text" placeholder="Tìm kiếm">
                                 <div id="customSkinMap" class="map" onclick="getMap();"></div>
                             </div>
+                             @if ($errors->has('lat'))
+                                    <p style="color: red">
+                                        <strong>{{ $errors->first('lat') }}</strong>
+                                    </p>
+                             @endif   <br>
                         </div>
                     </div>
                 </div>
@@ -370,7 +406,7 @@ function getMap() {
     var lng = marker.getPosition().lng();
     $('#lat').val(lat);
     $('#lng').val(lng);
-    console.log(lat);
+    console.log(lat+" ----"+lng);
 }
 </script>
 <script type="text/javascript">
@@ -387,14 +423,14 @@ function getMap() {
         $('#pac-input').val(city);
         $.ajax({
            type :'POST',
-           url:'{{ route("getDistrict") }}',
+           url:'{{ route('getDistrict') }}',
            data:
            { 'city': $('#city').val() , '_token' : "{{ csrf_token() }}"},
            success:function(data){
-                console.log(data);
                 var options = "";
                 for (var i = 0; i < data.array.length; i++) {
-                    options += "<option>" + data.array[i] + "</option>";
+                    options += "<option value='"+ data.array[i] +
+                    "' {{ (old('district') == "+ data.array[i] +" ? 'selected': '') }}>" + data.array[i] + "</option>";
                 }
                 $("#district").html(options);
            },
@@ -405,5 +441,33 @@ function getMap() {
         });
      }
 </script>
+
+//preview image 
+<script>
+     function previewImages() {
+
+              var $preview = $('#preview').empty();
+              if (this.files) $.each(this.files, readAndPreview);
+
+              function readAndPreview(i, file) {
+                
+                // if (!/\.(jpe?g|png|gif)$/i.test(file.name)){
+                //   return alert(file.name +" is not an image");
+                // } 
+                
+                var reader = new FileReader();
+
+                $(reader).on("load", function() {
+                  $preview.append($("<img/>", {src:this.result, height:200}));
+                });
+
+                reader.readAsDataURL(file);
+                
+              }
+
+            }
+
+            $('#image').on("change", previewImages);
+ </script>
 
 @endsection

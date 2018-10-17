@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin',  'middleware' => ['auth', 'admin']], function
    	 Route::group(['prefix' => 'place'], function()
    	 {
    	 	Route::get('create',['as'=>'admin.place.create','uses'=>'PlaceController@create']);
+      Route::post('save',['as'=>'admin.place.save','uses'=>'PlaceController@save']);
    	 });
 
       // category routes
