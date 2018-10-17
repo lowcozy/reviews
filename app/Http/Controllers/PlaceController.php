@@ -43,6 +43,16 @@ class PlaceController extends Controller
         ]);
     }
 
+    public function tableAjax()
+    {
+        $places = Place::search(
+            $params = [
+                 'limit'=> $_GET['limit']
+            ]
+         );
+        return view('Admin.place.table', ['places' => $places]);
+    }
+
     public function save(AddListingForm $request)
     {
     	 // them 1 dia diem moi'

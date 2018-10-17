@@ -58,7 +58,14 @@ class Place extends Model
 
   public static function search($params =[])
   {
+
+
     $places = self::select('places.*');
+
+    if(isset($params['limit']) && $params['limit'] >0)
+        {
+           return $places->paginate($params['limit']);
+        }
      return $places->paginate(1);
   }
 }
