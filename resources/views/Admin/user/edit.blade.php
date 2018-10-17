@@ -46,24 +46,7 @@
                                                 </span></div>
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <label class="col-sm-2 label-on-left">Email</label>
-                                            <div class="col-sm-7">
-                                                <div class="form-group label-floating {{ $errors->has('email') ? 'has-error' : 'is-empty' }}">
-                                                    <label class="control-label"></label>
-                                                    <input
-                                                    value="{{ old('email', $user->email) }}" 
-
-                                                     class="form-control " type="text" name="email" email="true" aria-invalid="true">
-                                                <span class="material-input">
-                                                	@if ($errors->has('email'))
-					                                        {{ $errors->first('email') }}
-					                                @endif
-                                                </span></div>
-                                            </div>
-                                            
-                                        </div>
+                                        
                                         <div class="row">
                                             <label class="col-sm-2 label-on-left">Role</label>
                                             <div class="col-sm-7">

@@ -5,11 +5,11 @@
         Tip 3: you can change the color of the sidebar with data-background-color="white | black"
     -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    CT
+                <a href="https://listing.vn" class="simple-text logo-mini" hidden>
+                    W
                 </a>
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                    Reviews
+                <a href="https://listing.vn" class="simple-text logo-normal">
+                    Admin
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -21,32 +21,9 @@
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                             <span>
                                 {{ $username }}
-                                <b class="caret"></b>
                             </span>
                         </a>
                         <div class="clearfix"></div>
-                        <div class="collapse" id="collapseExample">
-                            <ul class="nav">
-                                <li>
-                                    <a href="#">
-                                        <span class="sidebar-mini"> MP </span>
-                                        <span class="sidebar-normal"> My Profile </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="sidebar-mini"> EP </span>
-                                        <span class="sidebar-normal"> Edit Profile </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="sidebar-mini"> S </span>
-                                        <span class="sidebar-normal"> Settings </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <ul class="nav">
@@ -61,7 +38,7 @@
                             <ul class="nav">
                                 <li{{ (Route::is('admin.place.create')) ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.place.create') }}">
-                                        <span class="sidebar-mini"> RS </span>
+                                        <span class="sidebar-mini"> NEW </span>
                                         <span class="sidebar-normal"> Tạo mới </span>
                                     </a>
                                 </li>
@@ -70,13 +47,13 @@
                     </li>
 
                     <li{{ strpos(Route::currentRouteName(), 'user') ? ' class=active' : '' }}>
-                        <a data-toggle="collapse" href="#place">
+                        <a data-toggle="collapse" href="#user">
                              <i class="material-icons">account_box</i>
                             <p> Quản lý tài khoản
                                 <b class="caret"></b>
                             </p>
                         </a>
-                        <div class="collapse" id="place">
+                        <div class="collapse" id="user">
                             <ul class="nav">
                                 <li {{ (Route::is('admin.user.list')) ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.user.list') }}">
@@ -99,8 +76,14 @@
                             <ul class="nav">
                                 <li{{ (Route::is('admin.category.create')) ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.category.create') }}">
-                                        <span class="sidebar-mini"> RS </span>
+                                        <span class="sidebar-mini"> NEW </span>
                                         <span class="sidebar-normal"> Tạo mới </span>
+                                    </a>
+                                </li>
+                                 <li{{ (Route::is('admin.category.index')) ? ' class=active' : '' }}>
+                                    <a href="{{ route('admin.category.index') }}">
+                                        <span class="sidebar-mini"> LIST </span>
+                                        <span class="sidebar-normal"> Danh sách </span>
                                     </a>
                                 </li>
                             </ul>

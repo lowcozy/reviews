@@ -1,7 +1,7 @@
 @extends('Admin.layouts.app')
 @section('title', 'Danh sách tài khoản')
 @section('header')
-@include('Admin.includes.header', ['function' => 'Danh sách Tài Khoản'])
+@include('Admin.includes.header', ['function' => 'Danh sách danh mục'])
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
         </div>
 
         <div class="card-content">
-            <h4 class="card-title">Simple Table</h4>
+            <h4 class="card-title">Danh sách</h4>
             <div class="row">
             <div class="col-md-4">
                 <select
@@ -24,17 +24,6 @@
                     <option value="3">3</option>
                     <option value="0">All</option>
                    
-                </select>
-            </div>
-
-            <div class="col-md-4">
-                <select
-                id = "selectRole"
-                 class="selectpicker" data-style="select-with-transition" title="Choose Role" data-size="7">
-                    <option value="All" selected="">All Role</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Collab">Collab</option>
-                    <option value="Member">Member</option>
                 </select>
             </div>
         </div>
