@@ -36,7 +36,7 @@ class PlaceController extends Controller
     public function list()
     {
         $places = Place::search();
-        $categories = Category::getParrent(0);
+        $categories = Category::where('parent', ">", 0)->get();
         return view('Admin.place.list', [
             'places' => $places ,
             'categories' => $categories
@@ -47,7 +47,10 @@ class PlaceController extends Controller
     {
         $places = Place::search(
             $params = [
-                 'limit'=> $_GET['limit']
+                 'limit'=> $_GET['limit'], 
+                  'category' => $_GET['category'],
+                  'sort' => $_GET['sort'],
+                  'status' => $_GET['status']
             ]
          );
         return view('Admin.place.table', ['places' => $places]);

@@ -45,7 +45,9 @@
                                                  <div class='row'>
                                                     <label class="col-sm-2 label-on-left">Danh mục: </label>
                                                     <div class="col-sm-7">
-	                                                    <select name="category" class=" dropdown_sort">
+	                                                    <select
+	                                                     id = "cate"	
+	                                                     name="category" class=" dropdown_sort">
 						                                        <option value="0">All Categories</option>
 						                                        @foreach($categories as $category)
 						                                            <option value="{{ $category->id }}"
@@ -65,7 +67,7 @@
                                                     <label class="col-sm-2 label-on-left">Sắp xếp theo lượt: </label>
                                                     <div class="col-sm-7">
 	                                                    <select
-	                                                    id = "selectNumber"
+	                                                    id = "sort"
 	                                                     data-style="select-with-transition" title="Numbers result" data-size="7">
 	                                                        <option value="0">Tăng dần</option>
 	                                                        <option value="1">Giảm dần</option>
@@ -162,9 +164,11 @@
 	 	// get limit 
         var limit = $('#limit').val();
 	 	// get category 
+	 	var category = $('#cate').val();
 	 	// get sort 
+	 	var sort = $('#sort').val();
 	 	// get status 
-
+	 	var status = $('#status').val();
          $.ajax({
             url : '{{ route('admin.place.table') }}',
             type : "get",
@@ -173,9 +177,9 @@
                 '_token' : "{{ csrf_token() }}",
                 page : page,
                 limit : limit,
-                // keyword : keyword,
-                // column : column,
-                // sort : sort
+             	category : category, 
+             	sort : sort, 
+             	status : status
             },
             success : function (result){
                 //alert(result)
@@ -189,10 +193,11 @@
 
 	//list event
      $(document).ready(function(){
-        // $(document).on('click', '.pagination a', function (e) {
-        //     loadCat($(this).attr('href').split('page=')[1]);
-        //     e.preventDefault();
-        // });
+        $(document).on('click', '.pagination a', function (e) {
+            load_ajax($(this).attr('href').split('page=')[1]);
+            e.preventDefault();
+            location.hash = $(this).attr('href').split('page=')[1];
+        });
         // if(getKeyWordUrl()) {
         //     let keyword = getKeyWordUrl();
         //     $(`#keyword`).val(keyword);
@@ -201,9 +206,24 @@
             var page = getPage();
             load_ajax(page);
         });
-        // $("#keyword").keyup(function(){
-        //     loadCat();
-        // });
+        $("#cate").change(function(){
+            var page = getPage();
+            load_ajax(page);
+        });
+        $("#sort").change(function(){
+            var page = getPage();
+            load_ajax(page);
+        });
+        $("#status").change(function(){
+            var page = getPage();
+            load_ajax(page);
+        });
+        
+         $(window).on('hashchange', function(){
+         	  var page = getPage();
+        	  load_ajax(page);
+    	}).trigger('hashchange');
+
         
     });
 </script>

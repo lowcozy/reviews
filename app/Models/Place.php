@@ -59,8 +59,19 @@ class Place extends Model
   public static function search($params =[])
   {
 
-
+    //dd($params);
     $places = self::select('places.*');
+
+    if(isset($params['category']) && $params['category'] != 0)
+    {
+      $places->where('category_id', $params['category']);
+    }
+     if(isset($params['sort']) && $params['sort'] == 0)
+    {
+      $places->orderBy('count_views', 'asc');
+    }
+    if(isset($params['status']))
+    $places->where('status', $params['status']);
 
     if(isset($params['limit']) && $params['limit'] >0)
         {
