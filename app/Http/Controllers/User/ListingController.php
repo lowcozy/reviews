@@ -225,8 +225,8 @@ class ListingController extends Controller
        
         else
         {
-            $count_result = Place::all()->count();
-            $result = Place::paginate(2);
+            $count_result = Place::where('status', 1)->count();
+            $result = Place::where('status', 1)->paginate(2);
         }
 
         $services = Service::all();
