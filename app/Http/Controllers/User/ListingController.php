@@ -89,7 +89,7 @@ class ListingController extends Controller
     //show detail lisiting
     public function detail($id)
     {
-        $place = Place::find($id);
+        $place = Place::where('status', 1)->where('id', $id)->first();
         if($place)
         {
             // update views
@@ -164,8 +164,8 @@ class ListingController extends Controller
              $lng = $request->lng;
 
             $places = Place::select('places.*', 'c.parent')
-              ->leftJoin('categories as c', 'c.id' , 'places.category_id');
-
+              ->leftJoin('categories as c', 'c.id' , 'places.category_id')
+              ->where('places.status', 1);
             if($name !== null)
             {
                 $places->where('places.name', 'like', '%'.$name.'%');

@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function home(Request $request)
     {	
-    	$places = Place::where('status', 0)->orderBy('count_views', 'DESC')->paginate(3);
+    	$places = Place::where('status', 1)->orderBy('count_views', 'DESC')->paginate(3);
     	$categories = Category::getParrent(0);
     	return view('home', ['places' => $places, 'categories'=> $categories]);
     }

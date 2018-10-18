@@ -65,7 +65,7 @@ class PlaceController extends Controller
     	$data->lat = $request->lat;
     	$data->lng = $request->lng;
     	$data['author_id'] = $user_id;
-    	$data['status'] = 0;
+    	$data['status'] = 1;
     	$data->category_id = $request->category_id;
     	$data->city = $request->city;
     	$data->district = $request->district;

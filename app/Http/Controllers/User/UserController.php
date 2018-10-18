@@ -15,7 +15,7 @@ class UserController extends Controller
     public function listing($id)
     {
     	$user = Sentinel::findById($id);
-    	$places = Place::select('places.*')->where('author_id', $user->id)->paginate(3);
+    	$places = Place::select('places.*')->where('status', 1)->where('author_id', $user->id)->paginate(3);
 
     	$place_id = Place::select('places.id')->where('author_id', $user->id)->get();
 
