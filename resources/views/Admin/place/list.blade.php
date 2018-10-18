@@ -14,7 +14,7 @@
                                 </div>
 
                                 <div class="card-content">
-                                    <h4 class="card-title">List Users</h4>
+                                    <h4 class="card-title">List Places</h4>
                                     
                                                  @if (session('update'))
                                                     <div class="alert alert-success">
@@ -64,7 +64,7 @@
                                                 </div>
                                                 <br>
                                                 <div class='row'>
-                                                    <label class="col-sm-2 label-on-left">Sắp xếp theo lượt: </label>
+                                                    <label class="col-sm-2 label-on-left">Sắp xếp theo views: </label>
                                                     <div class="col-sm-7">
 	                                                    <select
 	                                                    id = "sort"

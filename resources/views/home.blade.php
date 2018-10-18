@@ -182,7 +182,7 @@
                                 <i class="ion-waterdrop"></i>
                             </div>
                             <div class="name-count">Listing</div>
-                            <div class="numb-count" data-to="1897" data-speed="2000" data-waypoint-active="yes">{{ $places->total() }}</div>
+                            <div class="numb-count" data-to="{{ $places->total() }}" data-speed="2000" data-waypoint-active="yes">{{ $places->total() }}</div>
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                                 <i class="ion-pricetags"></i>
                             </div>
                             <div class="name-count">Categories</div>
-                            <div class="numb-count" data-to="967" data-speed="2000" data-waypoint-active="yes">
+                            <div class="numb-count" data-to="{{ App\Models\Category::getParrent(0)->count() }}" data-speed="2000" data-waypoint-active="yes">
                                 {{ App\Models\Category::getParrent(0)->count() }}
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                                 <i class="ion-ios-people"></i>
                             </div>
                             <div class="name-count">Users</div>
-                            <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">
+                            <div class="numb-count" data-to="{{ App\User::all()->count() }}" data-speed="2000" data-waypoint-active="yes">
                                 {{ App\User::all()->count() }}
                             </div>
                         </div>
