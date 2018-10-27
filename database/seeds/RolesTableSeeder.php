@@ -31,10 +31,10 @@ class RolesTableSeeder extends Seeder
 
 				// tai khoan admin
 				$credentials = [
-				    'email'    => 'vietnga1910@gmail.com',
-				    'password' => '2611td',
-				    'first_name' => 'Viet',
-				    'last_name' => 'Nga',
+				    'email'    => 'nguyentuyet160296@gmail.com',
+				    'password' => '12345678',
+				    'first_name' => 'Nguyen',
+				    'last_name' => 'Tuyet',
 				];
 
 				$user = Sentinel::registerAndActivate($credentials);

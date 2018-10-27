@@ -42,6 +42,14 @@
     <script src="{{ asset('js/jquery.star-rating-svg.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/star-rating-svg.css') }}">
 </head>
+
+
+<style>
+    #searchform{
+        background: #00000091;
+    }
+}
+</style>
 <body class="header_sticky">
 
      <!-- Preloader -->
@@ -63,7 +71,7 @@
     <!-- Search -->
      <div class="container">
         <div class="wrap-form">
-            <div class="flat-formsearch ">
+            <div style="rgba(0, 0, 0, 0.3)" class="flat-formsearch ">
             <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="get" action="{{ route('list-listing')}}">
                 <span class="input-question">
                     <input type="text" placeholder="What are your looking for ?" name="name" id="name">
