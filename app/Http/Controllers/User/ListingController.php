@@ -26,7 +26,7 @@ class ListingController extends Controller
     	$cities = json_decode(file_get_contents($file));
     	$categories_parent = Category::getParrent(0);
     	return view ('User.Listing.add', [
-    		'services' => $services ,
+    		'services' => $services,
     		'cities' => $cities,
     		'parent' => $categories_parent
     	]);

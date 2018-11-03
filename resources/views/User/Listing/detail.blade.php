@@ -40,7 +40,7 @@
                                      @foreach($images as $item)
                                         <li>
                                             <?php $path = 'uploads/place/'.$item->url; ?>
-                                           <img style="max-width: 100%; max-height: 100%;" 
+                                           <img style="width: 870px; height: 460px; -->" 
                                            src="{{ asset($path) }}" alt="image">
                                         </li>
                                     @endforeach

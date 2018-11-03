@@ -123,6 +123,7 @@
                                 </p> 
                                
                                 <p class="location">Location <i class="ion-location float-right"></i></p>
+                                <br>
                                 <p id="distance" class="input-location form-filter">
                                     <span class="filter">
                                         <input id="ex8" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="100"

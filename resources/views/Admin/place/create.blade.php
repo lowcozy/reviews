@@ -186,7 +186,9 @@
                                         <div class="col-sm-10">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label> <br>
-                                                <input type="file" name="image[]" id="image" multiple />
+                                                <div class="image">       Choose file                               <input type="file" name="image[]" id="image" multiple />
+                                                </div>
+
                                             </div>
                                                 @if ($errors->has('image'))
                                                         <p style="color: red">

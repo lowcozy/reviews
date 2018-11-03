@@ -21,6 +21,15 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .form-group .image{
+                margin-left: 50px;
+                margin-right: 200px;
+                border: 1px solid #5f5050;
+                border-radius: 3px;
+                color: gray;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper" id="app">
