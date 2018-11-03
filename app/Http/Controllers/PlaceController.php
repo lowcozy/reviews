@@ -38,7 +38,7 @@ class PlaceController extends Controller
         $places = Place::search();
         $categories = Category::where('parent', ">", 0)->get();
         return view('Admin.place.list', [
-            'places' => $places ,
+            'places' => $places,
             'categories' => $categories
         ]);
     }

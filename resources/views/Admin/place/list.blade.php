@@ -139,93 +139,9 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                         {{ $places->links('Admin.layouts.pagination') }}
+                                         {{ $places->appends(request()->input())->links('Admin.layouts.pagination') }}
                                     </div>
                                 </div>
                             </div>
                         </div>
-@endsection
-
-@section('js')
-<script type="text/javascript">
-    //get page 
-    function getPage(){
-        var x = location.hash;
-        var numb = x.match(/\d/g);
-        if(numb!=null) {
-            numb = numb.join("");
-        } else numb = 1;
-        return numb;
-    }
-
-
-	//load ajax
-	 function load_ajax(page){
-	 	// get limit 
-        var limit = $('#limit').val();
-	 	// get category 
-	 	var category = $('#cate').val();
-	 	// get sort 
-	 	var sort = $('#sort').val();
-	 	// get status 
-	 	var status = $('#status').val();
-         $.ajax({
-            url : '{{ route('admin.place.table') }}',
-            type : "get",
-            dataType:"text",
-            data : {
-                '_token' : "{{ csrf_token() }}",
-                page : page,
-                limit : limit,
-             	category : category, 
-             	sort : sort, 
-             	status : status
-            },
-            success : function (result){
-                //alert(result)
-                $('#result').html(result);
-            },
-            error: function(xhr, status, error) {
-                console.log(xhr.responseText);
-            }
-        });
-    }
-
-	//list event
-     $(document).ready(function(){
-        $(document).on('click', '.pagination a', function (e) {
-            load_ajax($(this).attr('href').split('page=')[1]);
-            e.preventDefault();
-            location.hash = $(this).attr('href').split('page=')[1];
-        });
-        // if(getKeyWordUrl()) {
-        //     let keyword = getKeyWordUrl();
-        //     $(`#keyword`).val(keyword);
-        // }
-        $("#limit").change(function(){
-            var page = getPage();
-            load_ajax(page);
-        });
-        $("#cate").change(function(){
-            var page = getPage();
-            load_ajax(page);
-        });
-        $("#sort").change(function(){
-            var page = getPage();
-            load_ajax(page);
-        });
-        $("#status").change(function(){
-            var page = getPage();
-            load_ajax(page);
-        });
-        
-         $(window).on('hashchange', function(){
-         	  var page = getPage();
-        	  load_ajax(page);
-    	}).trigger('hashchange');
-
-        
-    });
-</script>
-	
 @endsection

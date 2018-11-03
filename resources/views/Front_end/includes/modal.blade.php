@@ -8,12 +8,14 @@
                         <form class="form-login form-listing" action="#" method="post">
                             @csrf
                             <h3 class="title-formlogin">Log in</h3>
-                            <span class="input-login icon-form"><input 
+                            <span class="input-login icon-form">
+                              <input 
                              id = "emailLogin"  style="color:black;"
                              type="text" placeholder="Your Email*" name="email" required="required"><i class="fa fa-user"></i>
                             </span>
 
-                            <span class="input-login icon-form"><input
+                            <span class="input-login icon-form">
+                              <input
                              id = "passwordLogin"  style="color:black;"
                              type="password" placeholder="Password*" name="password" required="required"><i class="fa fa-lock"></i></span>
                             <div class="flat-fogot clearfix">

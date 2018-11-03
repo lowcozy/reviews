@@ -77,6 +77,6 @@ class Place extends Model
         {
            return $places->paginate($params['limit']);
         }
-     return $places->paginate(1);
+     return $places->paginate(2);
   }
 }
