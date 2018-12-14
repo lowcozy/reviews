@@ -72,7 +72,6 @@ class UserController extends Controller
         $role->users()->attach($user);
 
         $user->first_name = $request->first_name;
-        $user->email = $request->email;
         $user->last_name = $request->last_name;
         $user->save();
         return redirect()->route('admin.user.list')->with('update', 'Cập nhật thành công!');
@@ -80,19 +79,12 @@ class UserController extends Controller
 
     public function delete(Request $request)
     {   
-        $role_old = User::getRole($params = ['id'=> $request->id])->first()->name;
-        $user = Sentinel::findById($request->idUser);
-        if($user)
-        {
-            
-            $role = Sentinel::findRoleByName($role_old);
-            $role->users()->detach($user);
-
-            $user->delete();
-            return redirect()->route('admin.user.list')->with('delete', 'Xóa thành công!');
-
-        }
-        
+        $role_old = User::getRole($params = ['id'=> $request->idUser])->first()->name;
+        $user = Sentinel::findById($request->idUser);  
+        $role = Sentinel::findRoleByName($role_old);
+        $role->users()->detach($user);
+        $user->delete();
+        return redirect()->route('admin.user.list')->with('delete', 'Xóa thành công!');
 
     }
 }

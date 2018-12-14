@@ -27,11 +27,12 @@
                                                         {{ session('update') }}
                                                     </div>
                                                  @endif
-                                                 
+                                                
+                                            <form action="{{ route('admin.place.list') }}" method="get">
                                                 <div class='row'>
                                                     <label class="col-sm-2 label-on-left">Number of rows: </label>
                                                     <div class="col-sm-7">
-	                                                    <select
+	                                                    <select name="number" 
 	                                                    id = "limit"
 	                                                     data-style="select-with-transition" title="Numbers result" data-size="7">
 	                                                        
@@ -66,7 +67,7 @@
                                                 <div class='row'>
                                                     <label class="col-sm-2 label-on-left">Sắp xếp theo views: </label>
                                                     <div class="col-sm-7">
-	                                                    <select
+	                                                    <select name="incress"
 	                                                    id = "sort"
 	                                                     data-style="select-with-transition" title="Numbers result" data-size="7">
 	                                                        <option value="0">Tăng dần</option>
@@ -78,7 +79,7 @@
                                                 <div class='row'>
                                                     <label class="col-sm-2 label-on-left">Trạng thái: </label>
                                                     <div class="col-sm-7">
-	                                                    <select
+	                                                    <select name="status"
 	                                                    id = "status"
 	                                                     data-style="select-with-transition" title="Numbers result" data-size="7">
 	                                                        <option value="0">Đã kích hoạt</option>
@@ -87,7 +88,22 @@
                                                 	</div>
                                                 </div>
                                                 <br>
+                                                <div class='row'>
+                                                    <label class="col-sm-2 label-on-left">Tên: </label>
+                                                    <div class="col-sm-7">
+                                                       <input type="text" name="name">
+                                                    </div>
+                                                </div>
 
+                                                 <div class='row'>
+                                                     <div class="col-sm-4"></div>
+                                                    <div class="col-sm-4">
+                                                        <button type="submit" class="btn btn-primary" type="button">Search</button>
+                                                    </div>
+                                                    <div class="col-sm-4"></div> 
+                                                </div>
+                                                <br>
+                                            </form>
                                       
 
                                     <div id="result" class="table-responsive">

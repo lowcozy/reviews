@@ -26,7 +26,6 @@ class EditUser extends FormRequest
         return [
               'first_name' => 'required|min:3|max:25',
               'last_name' => 'required|min:3|max:25',
-              'email' => 'required|email|unique:users,email'
         ];
     }
 }

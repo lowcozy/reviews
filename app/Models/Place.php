@@ -58,7 +58,6 @@ class Place extends Model
 
   public static function search($params =[])
   {
-
     //dd($params);
     $places = self::select('places.*');
 
