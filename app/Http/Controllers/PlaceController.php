@@ -68,6 +68,22 @@ class PlaceController extends Controller
         ]);
     }
 
+    public function active($id)
+    {   
+      $place = Place::find($id);
+      $place->status = 1;
+      $place->save();
+      return redirect()->back()->with('active', 'Đã kích hoạt địa điểm thành công');
+    }
+
+     public function lock($id)
+    {   
+      $place = Place::find($id);
+      $place->status = 0;
+      $place->save();
+      return redirect()->back()->with('ban', 'Đã khóa địa điểm');
+    }
+
     public function tableAjax()
     {
         $places = Place::search(

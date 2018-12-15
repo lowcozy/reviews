@@ -16,15 +16,15 @@
                                 <div class="card-content">
                                     <h4 class="card-title">List Places</h4>
                                     
-                                                 @if (session('update'))
+                                                 @if (session('active'))
                                                     <div class="alert alert-success">
-                                                        {{ session('update') }}
+                                                        {{ session('active') }}
                                                     </div>
                                                  @endif
 
-                                                 @if (session('delete'))
+                                                 @if (session('ban'))
                                                     <div class="alert alert-success">
-                                                        {{ session('update') }}
+                                                        {{ session('ban') }}
                                                     </div>
                                                  @endif
                                                 
@@ -36,9 +36,13 @@
 	                                                    id = "limit"
 	                                                     data-style="select-with-transition" title="Numbers result" data-size="7">
 	                                                        
-	                                                        <option value="1" selected="">1</option>
-	                                                        <option value="2">2</option>
-	                                                        <option value="3">3</option>
+	                                                        <option value="1"  {{ app('request')->input('number') == 1 ? 'selected' : '' }}>1</option>
+	                                                        <option value="2"
+                                                             {{ app('request')->input('number') == 2 ? 'selected' : '' }}
+                                                            >2</option>
+	                                                        <option value="3"
+                                                             {{ app('request')->input('number') == 3 ? 'selected' : '' }}
+                                                            >3</option>
 	                                                    </select>
                                                 	</div>
                                                 </div>
@@ -70,8 +74,12 @@
 	                                                    <select name="incress"
 	                                                    id = "sort"
 	                                                     data-style="select-with-transition" title="Numbers result" data-size="7">
-	                                                        <option value="0">Tăng dần</option>
-	                                                        <option value="1">Giảm dần</option>
+	                                                        <option value="0"
+                                                             {{ app('request')->input('incress') == 0 ? 'selected' : '' }}
+                                                            >Tăng dần</option>
+	                                                        <option value="1"
+                                                             {{ app('request')->input('incress') == 1 ? 'selected' : '' }}
+                                                            >Giảm dần</option>
 	                                                    </select>
                                                 	</div>
                                                 </div>
@@ -82,8 +90,12 @@
 	                                                    <select name="status"
 	                                                    id = "status"
 	                                                     data-style="select-with-transition" title="Numbers result" data-size="7">
-	                                                        <option value="0">Đã kích hoạt</option>
-	                                                        <option value="1">Chưa kích hoạt</option>
+	                                                        <option value="0" 
+                                                            {{ app('request')->input('status') == 0 ? 'selected' : '' }}
+                                                            >Chưa kích hoạt</option>
+	                                                        <option value="1"
+                                                             {{ app('request')->input('status') == 1 ? 'selected' : '' }}
+                                                            >Đã kích hoạt</option>
 	                                                    </select>
                                                 	</div>
                                                 </div>
@@ -91,7 +103,7 @@
                                                 <div class='row'>
                                                     <label class="col-sm-2 label-on-left">Tên: </label>
                                                     <div class="col-sm-7">
-                                                       <input type="text" name="name">
+                                                       <input type="text" name="name" value="{{ app('request')->input('name') }}">
                                                     </div>
                                                 </div>
 
@@ -120,6 +132,7 @@
                                                     <th>Mở Cửa</th>
                                                     <th>Đóng cửa</th>
                                                     <th>Lượt view</th>
+                                                    <th>Kích hoạt</th>
                                                     <th class="text-right">Actions</th>
                                                 </tr>
                                             </thead>
@@ -136,7 +149,15 @@
                                                         <td>{{ $place->open }}</td>
                                                         <td>{{ $place->close }}</td>
                                                         <td>{{ $place->count_views }}</td>
-
+                                                        <td>
+                                                            @if($place->status == 0)
+                                                            <button type="button" onclick="location.href = '{{ route("admin.place.active", $place->id) }}';" class="btn btn-primary" >Kích hoạt
+                                                            </button>
+                                                            @else
+                                                            <button type="button" onclick="location.href = '{{ route("admin.place.lock", $place->id) }}';" class="btn btn-danger" >Khóa
+                                                            </button>
+                                                            @endif
+                                                        </td>
                                                         <td class="td-actions text-right">
               
                                                         <a type="button" rel="tooltip" 
