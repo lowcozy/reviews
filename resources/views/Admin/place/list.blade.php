@@ -133,7 +133,6 @@
                                                     <th>Đóng cửa</th>
                                                     <th>Lượt view</th>
                                                     <th>Kích hoạt</th>
-                                                    <th class="text-right">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -157,21 +156,6 @@
                                                             <button type="button" onclick="location.href = '{{ route("admin.place.lock", $place->id) }}';" class="btn btn-danger" >Khóa
                                                             </button>
                                                             @endif
-                                                        </td>
-                                                        <td class="td-actions text-right">
-              
-                                                        <a type="button" rel="tooltip" 
-                                                        href= {{ route('admin.user.edit', ['id'=> $place->id]) }} 
-                                                        class="btn btn-success" data-original-title="" title="">
-                                                            <i class="material-icons">edit</i>
-                                                        </a>
-                                                        <button 
-                                                            onclick = "changeDeleteUrl({{ $place['id'] }})"
-                                                            data-toggle="modal" data-target="#exampleModal"
-                                                            type="button" rel="tooltip" class="btn btn-danger">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
