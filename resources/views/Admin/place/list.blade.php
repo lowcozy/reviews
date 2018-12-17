@@ -139,7 +139,7 @@
                                             	   @foreach($places as $place)
                                                     <tr>
                                                         <td class="text-center">{{ $place->id }}</td>
-                                                        <td>{{ $place->name }}</td>
+                                                        <td><a href="{{ route('listing.detail', $place->id) }}">{{ $place->name }}</a></td>
                                                         <td>{{ $place->category()->first()->name }}</td>
                                                         <td>{{ $place->city }}</td>
                                                         <td>{{ $place->district }}</td>
