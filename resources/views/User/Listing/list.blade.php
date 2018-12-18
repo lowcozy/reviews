@@ -8,13 +8,13 @@
                     <div class="flat-select clearfix">
                         <div class="float-left width50 clearfix">
                             <div class="one-three showing">
-                                <p><span>{{ $places->total() }}</span> Found Listings</p>
+                                <p><span>{{ $places->total() }}</span> Bài đăng</p>
                             </div>
                             <form novalidate="" class="filter-form clearfix" id="filter-form" method="get" action="{{ route('list-listing') }}">
 
                             <div class="one-three more-filter">
                                 <ul class="unstyled">
-                                    <li class="current"><a href="#" class="title">Services 
+                                    <li class="current"><a href="#" class="title">Dịch vụ
                                         <i class="fa fa-angle-right"></i></a>
                                         <ul class="unstyled">
 
@@ -93,13 +93,13 @@
                     <div class="sidebar">
                         <div class=" widget widget-form style2">
                             <h5 class="widget-title">
-                                Search Box
+                                Tìm kiếm
                             </h5>
                             <!-- <form novalidate="" class="filter-form clearfix" id="filter-form" method="get" action="{{ route('listing.search') }}"> -->
                                 <p class="book-notes">                                      
                                     <input
                                     style="color: black;"
-                                     type="text" placeholder="Search by Name" name="name" required=""
+                                     type="text" placeholder="Tìm kiếm theo tên" name="name" required=""
 
                                     @if(isset($_GET['name']))
                                         value= {{ $_GET['name'] }} 
@@ -108,7 +108,7 @@
                                 </p>
                                 <p class="book-form-select icon">            
                                     <select name="category" class=" dropdown_sort">
-                                        <option value="">All Categories</option>
+                                        <option value="">Danh mục</option>
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}"
                                                 @if(isset($_GET['category']))
@@ -122,7 +122,7 @@
                                     </select>
                                 </p> 
                                
-                                <p class="location">Location <i class="ion-location float-right"></i></p>
+                                <p class="location">Vị trí <i class="ion-location float-right"></i></p>
                                 <br>
                                 <p id="distance" class="input-location form-filter">
                                     <span class="filter">
@@ -144,7 +144,7 @@
                                    <input id="lng" type="hidden" value="" name='lng' >  
 
                                 <p class="form-submit text-center">
-                                    <button type="submit" class="flat-button">Search <i class="ion-ios-search-strong"></i></button>
+                                    <button type="submit" class="flat-button">Tìm kiếm <i class="ion-ios-search-strong"></i></button>
                                 </p>
                             </form>
                         </div>

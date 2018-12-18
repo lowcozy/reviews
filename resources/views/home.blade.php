@@ -7,10 +7,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-section text-center">
-                        <h1 class="title">Categories</h1>
+                        <h1 class="title">Danh mục</h1>
                         <div class="sub-title">
 
-                            What do you need to find?
+                            Bạn muốn tìm ?
                         </div>
                         
                     </div>
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="text">
                                     <h6><a href="#" title="">Hotel & Travel</a></h6>
-                                    <p>45 Listing</p>
+                                    <p>45 Bài đăng</p>
                                     
                                 </div>
                             </div>
@@ -88,9 +88,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-section text-center">
-                        <h1 class="title">Most Visited Places</h1>
+                        <h1 class="title">Địa điểm</h1>
                         <div class="sub-title">
-                            Some great addresses you should not miss
+                            Địa điểm tuyệt vời bạn không nên bỏ lỡ
                         </div>
                         
                     </div>
@@ -121,7 +121,7 @@
                                                 <span class="flat-start">
                                                     {!! StarRating::rate(App\Models\Place::getRatePlace($item->id)) !!}
                                                 </span>
-                                                <a href="#" class="review">( {{ \App\Models\Rate::where('place_id', $item->id)->count() }} reviewers )</a>
+                                                <a href="#" class="review">( {{ \App\Models\Rate::where('place_id', $item->id)->count() }} bình luận )</a>
                                             </div>
                                         </div>
                                         <div class="info-product">
@@ -162,18 +162,18 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="title-section">
-                        <h1 class="title">Newsletter</h1>
+                        <h1 class="title"></h1>
                         <div class="sub-title">
-                            Subscribe now and receive weekly newsletter with
+                            Đăng ký ngay và nhận bản tin hàng tuần với
                         </div>
                     </div>
                     <form id="subscribe-form" class="flat-mailchimp" method="post" action=" " data-mailchimp="true">
                         <div class="field clearfix" id="subscribe-content"> 
                             <p class="wrap-input-email">
-                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here">
+                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Nhập email của bạn">
                             </p>
                             <p class="wrap-btn">
-                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE</button>
+                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">Theo dõi</button>
                             </p>
                         </div>
                         <div id="subscribe-msg"></div>
@@ -185,7 +185,7 @@
                             <div class="icon-count">
                                 <i class="ion-waterdrop"></i>
                             </div>
-                            <div class="name-count">Listing</div>
+                            <div class="name-count">Bài đăng</div>
                             <div class="numb-count" data-to="{{ $places->total() }}" data-speed="2000" data-waypoint-active="yes">{{ $places->total() }}</div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                             <div class="icon-count">
                                 <i class="ion-pricetags"></i>
                             </div>
-                            <div class="name-count">Categories</div>
+                            <div class="name-count">Danh mục</div>
                             <div class="numb-count" data-to="{{ App\Models\Category::getParrent(0)->count() }}" data-speed="2000" data-waypoint-active="yes">
                                 {{ App\Models\Category::getParrent(0)->count() }}
                             </div>
@@ -209,7 +209,7 @@
                             <div class="icon-count">
                                 <i class="ion-ios-people"></i>
                             </div>
-                            <div class="name-count">Users</div>
+                            <div class="name-count">Người dùng</div>
                             <div class="numb-count" data-to="{{ App\User::all()->count() }}" data-speed="2000" data-waypoint-active="yes">
                                 {{ App\User::all()->count() }}
                             </div>

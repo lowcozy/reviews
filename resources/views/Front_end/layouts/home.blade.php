@@ -74,24 +74,24 @@
             <div style="rgba(0, 0, 0, 0.3)" class="flat-formsearch ">
             <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="get" action="{{ route('list-listing')}}">
                 <span class="input-question">
-                    <input type="text" placeholder="What are your looking for ?" name="name" id="name">
+                    <input type="text" placeholder="Bạn muốn tìm ?" name="name" id="name">
                 </span>
                 <span class="input-location">
-                    <input type="text" placeholder="Location" id="location">
+                    <input type="text" placeholder="Vị trí" id="location">
                     <span class="filter">
                         <input id="ex8" name='distance' data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
                     </span>
                 </span> 
                 <span class="select">
                     <select name="category">
-                        <option value="">All Categories </option>
+                        <option value="">Danh mục </option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </span>                        
                 <span class="form-submit text-right">                 
-                    <button class="flat-button">Search <i class="ion-ios-search-strong"></i></button>
+                    <button class="flat-button">Tìm kiếm <i class="ion-ios-search-strong"></i></button>
                 </span>
 
                 <input id="lat" type="hidden" value="" name='lat' > 

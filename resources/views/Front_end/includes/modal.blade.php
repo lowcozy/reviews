@@ -7,7 +7,7 @@
                     <div class="modal-body text-center clearfix">
                         <form class="form-login form-listing" action="#" method="post">
                             @csrf
-                            <h3 class="title-formlogin">Log in</h3>
+                            <h3 class="title-formlogin">Đăng nhập</h3>
                             <span class="input-login icon-form">
                               <input 
                              id = "emailLogin"  style="color:black;"
@@ -89,7 +89,7 @@
                     <div class="modal-body text-center clearfix">
                         <form class="form-login form-listing" action="#" method="post">
                              @csrf
-                            <h3 class="title-formlogin">Sign Up</h3>
+                            <h3 class="title-formlogin">Đăng ký</h3>
                             <span class="input-login icon-form"><input type="text" placeholder="Your First Name*"   style="color:black;"
                                 name="first_name" id ="first_name"
                                 required="required"><i class="fa fa-user"></i></span>
@@ -177,7 +177,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Add a review</h5>
+        <h5 class="modal-title">Thêm đánh giá</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -190,18 +190,18 @@
             </p>
 
             <div id="divComment">   
-                <p id="errorComment" style="color: red; display: none;">Plz Enter your comment</p><br>
+                <p id="errorComment" style="color: red; display: none;">Bạn chưa thêm bình luận</p><br>
             </div>
 
             <div class="start-review">
-            <h5>Choose Images</h5>
+            <h5>Chọn ảnh</h5>
              <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
              <br>
              <div id="preview"></div>
            
              <br>
 
-            <h4>Your rating : <span class="live-rating"></span></h4>
+            <h4>Đánh giá : <span class="live-rating"></span></h4>
             <span class="my-rating-9"></span>
             <input type="hidden" id="rate" value=''>
             </div> 
@@ -211,8 +211,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="review()" class="btn btn-default">Send Review</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" onclick="review()" class="btn btn-default">Gửi</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
       </div>
     </div>
   </div>
@@ -230,7 +230,7 @@
           <div class="modal-bodyy">
           </div>
           <div class="modal-footer">
-            <button class="btn btn-default" data-dismiss="modal">Close</button>
+            <button class="btn btn-default" data-dismiss="modal">Đóng</button>
           </div>
         </div>
         

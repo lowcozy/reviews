@@ -8,15 +8,11 @@
             <div class="row">
                 <div class="col-md-12">                    
                     <div class="page-title-heading">
-                        <h1 class="title">User</h1>
+                        <h1 class="title">{{ $user->first_name }}{{ $user->last_name }}</h1>
                     </div><!-- /.page-title-captions -->
                     <div class="breadcrumbs">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li> - </li>                         
-                            <li><a href="index.html">Page</a></li>
-                            <li> - </li>                         
-                            <li>User</li>
+                            
                         </ul>                   
                     </div><!-- /.breadcrumbs -->   
                 </div><!-- /.col-md-12 -->  
@@ -29,9 +25,9 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="flat-user profile">
-                        <a href="{{ route('user.listing', ['id'=>$user->id]) }}" class="edit" title="">Back to listing <i class="fa fa-backward"></i></a>
+                        <a href="{{ route('user.listing', ['id'=>$user->id]) }}" class="edit" title="">Quay lại bài đăng <i class="fa fa-backward"></i></a>
                         <ul class="info">
-                            <li><a title=""><i class="fa fa-user"></i>BASIC INFOMATION</a></li>
+                            <li><a title=""><i class="fa fa-user"></i>Thông tin cá nhân</a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,7 +36,7 @@
                     <div class="content-tab listing-user profile">
                         <div class="content-inner active">
                             <div class="basic-info">
-                                <h5>Basic Infomation</h5>
+                                <h5>Thông tin</h5>
                                 <div class="row">
                                     <div class="col-md-4">
                                         @if (session('success'))
@@ -76,7 +72,7 @@
                                             </p>
 
                                             <p class="input-info">
-                                                <label>Change avatar*</label>
+                                                <label>Thay ảnh đại diện*</label>
                                                 <input type="file" name="avatar" id="uploadImg">
                                             </p>
                                         
@@ -85,23 +81,20 @@
                             </div>
                             <div class="on-web">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <h5>On the web</h5>
-                                    </div>
                                     <div class="col-md-8">
                                         <ul class="add-section">
                                             <li class="face"><i class="fa fa-facebook-square face"></i><span>Facebook</span><a href="https://www.facebook.com/" title="">{{ $user->email }}</a><i class="fa fa-minus-circle float-right"></i></li>
                                         </ul>
 
                                         <p class="input-info">
-                                                <label>Change Email if u want*</label>
+                                                <label>Thay đổi email (nếu muốn)*</label>
                                                 <input type="email" name="email" id="name">
                                             </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="update-button text-center">
-                                <button type="submit" class="flat-button">Update Profile</button>
+                                <button type="submit" class="flat-button">Cập nhật</button>
                             </form>
                             </div>
                         </div>

@@ -68,23 +68,23 @@
                                         <div class="start-review">
                                 <span class="flat-start">{!! StarRating::rate($star) !!}</span>
                                 ( <span class="like">{{ $count_review }}</span>
-                                <span class="like">reviewers )</span>
+                                <span class="like">Bình luận )</span>
                                         </div>
                                     </li>
                                     <li>
                                         <a class="social-links">
-                                            <span>Views:</span>
+                                            <span>Lượt xem:</span>
                                           
                                             <span>{{ $place->count_views }}</span>
                                         </a>
                                     </li>   
                                     <li>
-                                       <?php $link = "https://www.facebook.com/sharer/sharer.php?u=https://listing.vn/listing/".$place->id ?>
+                                       <?php $link = "https://www.facebook.com/sharer/sharer.php?u=https://dulich.com/listing/".$place->id ?>
                                     </li>       
                                 </ul>
                                 <p>{{ $place->description }}</p>
                             </div>
-                            <h3 class="title-listing">Service</h3>
+                            <h3 class="title-listing">Dịch vụ</h3>
                             <div class="wrap-list clearfix">
                                 <ul class="list float-left">
                                     @foreach($services as $service)
@@ -95,12 +95,12 @@
                              
                              <p class="form-submit">                 
                                     <button onclick="addReview()" type="button" class="button"
-                                    >Add Review</button>
-                                    <button style="margin-left: 10px; background-color:#3b5998;" onclick="window.open('{{ $link }}', '_blank');">Share to Face</button>
+                                    >Thêm bình luận</button>
+                                    <button style="margin-left: 10px; background-color:#3b5998;" onclick="window.open('{{ $link }}', '_blank');">Chia sẻ Facebook</button>
                              </p><br>
                                  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Flisting.vn%2Flisting%2F2&layout=button&size=small&mobile_iframe=true&appId=1121185011376046&width=0&height=0" width="0" height="0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                             <div class="list-comment">
-                                <h3 class="title-listing">{{ $count_comment }} Comments</h3>
+                                <h3 class="title-listing">{{ $count_comment }} Bình luận</h3>
                                 <div class="comments-area">
                                     <ol id='comments' class="comment-list">
 
@@ -161,7 +161,7 @@
                                     </ol><!-- .comment-list -->
                             @if(count($users)>0)
                             <div id="remove-row">
-                            <button id="btn-more" data-id='{{ $user->comment_id }}' class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> Load More </button>
+                            <button id="btn-more" data-id='{{ $user->comment_id }}' class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> Tải thêm </button>
                             </div>
                             @endif
                             <br>
@@ -175,9 +175,10 @@
                 <div class="col-lg-3">
                     <div class="sidebar">
                         <div class="widget widget_listing">
-                            <h5 class="widget-title">Top Rating Listing</h5>
+                            <h5 class="widget-title">Đánh giá cao</h5>
                             <ul>
                               @if(count($topRate)>0)
+                              
                                 @foreach($topRate as $placee)
                                 <li>
                                     <div class="featured">
@@ -196,9 +197,9 @@
                                             </span>
                                             
                                               @if($placee->countReview() <= 1)
-                                             <a href="#" class="review"> {{ $placee->countReview() }} Review</a>
+                                             <a href="#" class="review"> {{ $placee->countReview() }} Bình luận</a>
                                              @else 
-                                             <a href="#" class="review"> {{ $placee->countReview() }} Reviews</a>
+                                             <a href="#" class="review"> {{ $placee->countReview() }} Bình luận</a>
                                              @endif
                                         </div>
                                     </div>
@@ -209,14 +210,14 @@
                         </div>
                         
                         <div class="widget widget-contact">
-                            <h5 class="widget-title">Contact Us</h5>
+                            <h5 class="widget-title">Liên hệ</h5>
                             <ul>
                                <li class="adress">{{ $place->district }}, {{ $place->city }}</li>
                                <li class="phone">{{ $place->phone }}</li>
                                <li class="email">{{ $place->email }}</li>
                                <li class="time">
-                                   <span>Open</span>  {!! Time::timer($place->open) !!}<br>
-                                   <span>Close</span> {!! Time::timer($place->close) !!}<br>
+                                   <span>Mở cửa</span>  {!! Time::timer($place->open) !!}<br>
+                                   <span>Đóng cửa</span> {!! Time::timer($place->close) !!}<br>
                                </li>
                            </ul> 
                         </div>       

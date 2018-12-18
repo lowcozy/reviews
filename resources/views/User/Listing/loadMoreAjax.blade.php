@@ -48,7 +48,7 @@
                                         </li><!-- #comment-## -->
 @endforeach
 <div id="remove-row">
-    <button id="btn-more" data-id="{{ $user->comment_id }}" class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" > Load More </button>
+    <button id="btn-more" data-id="{{ $user->comment_id }}" class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" > Tải thêm </button>
 </div>
 @endif
 

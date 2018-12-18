@@ -9,16 +9,10 @@
             <div class="row">
                 <div class="col-md-12">                    
                     <div class="page-title-heading">
-                        <h1 class="title">Add Listing</h1>
+                        <h1 class="title">Thêm bài đăng</h1>
                     </div><!-- /.page-title-captions -->
                     <div class="breadcrumbs">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li> - </li>                         
-                            <li><a href="index.html">Page</a></li>
-                            <li> - </li>                         
-                            <li>Add Listing</li>
-                        </ul>                   
+                        
                     </div><!-- /.breadcrumbs -->   
                 </div><!-- /.col-md-12 -->  
             </div><!-- /.row -->  
@@ -36,12 +30,12 @@
             <div class="add-filter">
                 <div class="row">
                     <div class="col-lg-2">
-                        <h5 class="title-list">Infor Listing</h5>
+                        <h5 class="title-list">Thông tin bài đăng</h5>
                     </div>
                     <div class="col-lg-10 widget-form">
                         <div class="filter-form form-addlist">
                             <p class="input-info">
-                                <label class="nhan">Image*</label>
+                                <label class="nhan">Hình ảnh*</label>
                                 <br>
                                 <input type="file" name="image[]" id="image" multiple />
                             </p>
@@ -57,19 +51,19 @@
 
                             <p class="input-info">
                                 <label
-                                 class="nhan">Name*</label>
+                                 class="nhan">Tên*</label>
                                 <input 
                                  style="color:black;"
                                  value="{{ old('name') }}" type="text" name="name" id="title" required >
                             </p>
                             <p class="input-info">
-                                <label class="nhan">Description*</label>
+                                <label class="nhan">Mô tả*</label>
                                 <textarea  style="color:black;"
                                 class="" tabindex="4" name="description" required>{{ old('description') }}</textarea>
                             </p>
 
                             <p class="input-info">
-                                	<label class="nhan">Phone*</label>
+                                	<label class="nhan">Điện thoại*</label>
                                     <input  style="color:black;"
                                     value="{{ old('phone') }}"
                                      type="text" name="phone" placeholder="Phone" required>
@@ -83,9 +77,9 @@
                             </p>
 
                             <p class="input-info icon">
-                                <label class="nhan">Categories*</label>
+                                <label class="nhan">Danh mục*</label>
                                 <select  style="color:black;"  name="category_id" class=" dropdown_sort">
-                                <option value="0">Select Categories</option>		
+                                <option value="0">Chọn danh mục</option>		
     							@foreach($parent as $item)
   								<optgroup label="{{ $item->name }}">
   									<?php $childs = App\Models\Category::getParrent($item->id) ?> 
@@ -109,9 +103,9 @@
                             
 
                              <p class="input-info icon">
-                                <label class="nhan">City*</label>
+                                <label class="nhan">Tỉnh/Thành phố*</label>
                                  <select  style="color:black;" class="dropdown_sort" name="city" id="city" onchange="getDistrict()">
-                                                    <option value="0">Select City</option>
+                                                    <option value="0">Chọn tỉnh/thành phố</option>
                                                     @foreach ($cities as $city)
                                                     <option value="{{ $city->name }}"
 
@@ -131,16 +125,16 @@
                             
 
                              <p class="input-info icon">
-                                <label class="nhan">District*</label>
+                                <label class="nhan">Quận/huyện*</label>
                                 <select  style="color:black;" name="district" id="district" class=" dropdown_sort">
-                                    <option value="">Select District</option>
+                                    <option value="">Chọn quận/huyện</option>
                                 </select>
                                 <i class="fa fa-angle-down"></i>
                             </p>
                        </div>
 
                         <div class="more-filter">
-                            <label class="nhan">Service*</label>
+                            <label class="nhan">Dịch vụ*</label>
                             <div class="row">
                             	@foreach($services as $service)
                             		<div class="col-md-3">
@@ -169,10 +163,10 @@
                     </div>
                     <div class="col-lg-10 profile">
                         <div class="open-hour">
-                            <label class="nhan">Open Hours*</label>
+                            <label class="nhan">Giờ mở*</label>
                             <ul class="list-hour">
                                 <li class="clearfix">
-                                    <div class="day">Open</div>
+                                    <div class="day">Mở cửa</div>
                                     
 	                                    <select style="width: 10%;" name="open_h" class=" dropdown_sort">
 	                                    <?php $count = 24; 
@@ -181,7 +175,7 @@
 	                                    <?php } ?>
 		                      
 	                                	</select>
-	                                	Hour
+	                                	Giờ
 	                                   <select style="width: 10%;" name="open_m" class=" dropdown_sort">
 		                                    <?php $count = 60; 
 	                                    for ($i=0; $i < $count ; $i++) { ?>
@@ -192,11 +186,11 @@
 	                                    	@endif
 	                                    <?php } ?>
 	                                	</select>
-	                                	Min
+	                                	Phút
                                 </li>
 
                                 <li class="clearfix">
-                                    <div class="day">Close</div>
+                                    <div class="day">Đóng cửa</div>
                                     
 	                                    <select style="width: 10%;" name="close_h" class=" dropdown_sort">
 	                                    <?php $count = 24; 
@@ -205,7 +199,7 @@
 	                                    <?php } ?>
 		                      
 	                                	</select>
-	                                	Hour
+	                                	Giờ
 	                                   <select style="width: 10%;" name="close_m" class=" dropdown_sort">
 		                                    <?php $count = 60; 
 	                                    for ($i=0; $i < $count ; $i++) { ?>
@@ -216,7 +210,7 @@
 	                                    	@endif
 	                                    <?php } ?>
 	                                	</select>
-	                                	Min
+	                                	Phút
                                 </li>
                             </ul>
                         </div>
@@ -325,7 +319,7 @@
             		<input type="hidden" id="lat-input" name='lat'>
             		<input type="hidden" id="lng-input" name='lng'>
 
-            		<button type="submit" class="flat-button">Add Listing</button>
+            		<button type="submit" class="flat-button">Thêm</button>
     		</form>
         </div>
     </section>  

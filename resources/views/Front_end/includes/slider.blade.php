@@ -34,7 +34,7 @@
                                 data-paddingbottom="[0,0,0,0"
                                 data-paddingleft="[0,0,0,0]"
 
-                                style="z-index: 16; white-space: nowrap;">Find Anything You Want
+                                style="z-index: 16; white-space: nowrap;">Tìm những gì bạn muốn
                             </div>
 
                             <!-- LAYER NR. 13 -->
@@ -59,7 +59,7 @@
                                 data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
 
-                                style="z-index: 17; white-space: nowrap;">Find awesome places, bars, restaurants <span>just one click </span> Our website will provide you with reliable <br> addresses best price for the nearest address
+                                style="z-index: 17; white-space: nowrap;">Chúng tôi sẽ cung cấp cho bạn địa chỉ tin cậy - tốt nhất - gần bạn nhất
                             </div>
                         </li>
 
@@ -118,7 +118,8 @@
                                 data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
 
-                                style="z-index: 17; white-space: nowrap;">Find awesome places, bars, restaurants <span>just one click </span> Our website will provide you with reliable <br> addresses best price for the nearest address
+                                
+                                style="z-index: 17; white-space: nowrap;">Chúng tôi sẽ cung cấp cho bạn địa chỉ tin cậy - tốt nhất - gần bạn nhất
                             </div>
                         </li>                       
                     </ul>

@@ -17,33 +17,33 @@
                         <nav id="mainnav" class="mainnav float-left">
                             <ul class="menu"> 
                                 <li class="home">
-                                    <a href="{{ route('home') }}">Home</a> 
+                                    <a href="{{ route('home') }}">Trang chủ</a> 
                                 </li>
-                                <li><a href="{{ route('list-listing') }}">Listing</a>
+                                <li><a href="{{ route('list-listing') }}">Bài đăng</a>
                                 </li>
                                 @if(Sentinel::guest())
                                         <li>
-                                            <a data-toggle="modal" href="#popup_login"><i class="fa fa-user"></i> Sign in</a> 
+                                            <a data-toggle="modal" href="#popup_login"><i class="fa fa-user"></i> Đăng nhập</a> 
                                         </li>
                                         <li>
-                                            <a data-toggle="modal" href="#popup_register"><i class="fa fa-user-plus"></i> Register</a> 
+                                            <a data-toggle="modal" href="#popup_register"><i class="fa fa-user-plus"></i> Đăng ký</a> 
                                         </li>          
                                 @else
                                         <li class="nav-item dropdown">
 
                                             <a href="{{ route('user.listing', ['id' => Sentinel::getUser()->id]) }}"><i class="fa fa-user"></i> {{ Sentinel::getUser()->last_name }}</a>
                                              <ul class="submenu"> 
-                                                <li><a href="{{ route('user.listing', ['id' => Sentinel::getUser()->id]) }}">Your Listing</a>
+                                                <li><a href="{{ route('user.listing', ['id' => Sentinel::getUser()->id]) }}">Bài đăng của bạn</a>
                                                 </li>
-                                                <li><a href="{{ route('user.edit',['id' => Sentinel::getUser()->id]) }}">User profile</a>
+                                                <li><a href="{{ route('user.edit',['id' => Sentinel::getUser()->id]) }}">Thông tin cá nhân</a>
                                                 </li>
-                                                <li><a href="{{ route('user.addListing') }}">Add Listing</a>
+                                                <li><a href="{{ route('user.addListing') }}">Thêm bài đăng</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
                                                                  document.getElementById('logout-form').submit();">
-                                                    {{ __('Logout') }}
+                                                    {{ __('Đăng xuất') }}
                                                     </a>
                                                 </li>
                                             </ul><!-- /.submenu -->
@@ -58,7 +58,7 @@
                         </nav><!-- /.mainnav -->  
 
                         <div class="button-addlist float-right">
-                            <button type="button" class="flat-button" onclick="location.href='{{ route('user.addListing') }}'">Add Listing</button>
+                            <button type="button" class="flat-button" onclick="location.href='{{ route('user.addListing') }}'">Thêm bài đăng</button>
                          </div> 
                     </div><!-- /.nav-wrap -->
                 </div><!-- /.col-lg-8 -->                                    
