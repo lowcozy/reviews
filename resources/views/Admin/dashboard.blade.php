@@ -13,96 +13,37 @@
                 <i class="material-icons">&#xE894;</i>
             </div>
             <div class="card-content">
-                <h4 class="card-title">This is admin Page</h4>
+                <h4 class="card-title">Top 100</h4>
                 <div class="row">
                     <div class="col-md-5">
-                        <div class="table-responsive table-sales">
+                        <div class="table-responsive">
                             <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Tên</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Views</th>
+                                        <th>Rating</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="/assets/img/flags/US.png">
-                                            </div>
-                                        </td>
-                                        <td>USA</td>
-                                        <td class="text-right">
-                                            2.920
-                                        </td>
-                                        <td class="text-right">
-                                            53.23%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="/assets/img/flags/DE.png">
-                                            </div>
-                                        </td>
-                                        <td>Germany</td>
-                                        <td class="text-right">
-                                            1.300
-                                        </td>
-                                        <td class="text-right">
-                                            20.43%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="/assets/img/flags/AU.png">
-                                            </div>
-                                        </td>
-                                        <td>Australia</td>
-                                        <td class="text-right">
-                                            760
-                                        </td>
-                                        <td class="text-right">
-                                            10.35%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="/assets/img/flags/GB.png">
-                                            </div>
-                                        </td>
-                                        <td>United Kingdom</td>
-                                        <td class="text-right">
-                                            690
-                                        </td>
-                                        <td class="text-right">
-                                            7.87%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="/assets/img/flags/RO.png">
-                                            </div>
-                                        </td>
-                                        <td>Romania</td>
-                                        <td class="text-right">
-                                            600
-                                        </td>
-                                        <td class="text-right">
-                                            5.94%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="/assets/img/flags/BR.png">
-                                            </div>
-                                        </td>
-                                        <td>Brasil</td>
-                                        <td class="text-right">
-                                            550
-                                        </td>
-                                        <td class="text-right">
-                                            4.34%
-                                        </td>
-                                    </tr>
+                                    @forelse($places as $place)
+                                        <tr>
+                                            <td>
+                                               {{ $place->id }}
+                                            </td>
+                                            <td><a href="{{ route('listing.detail', $place->id) }}">{{ $place->name }}</a></td>
+                                            <td>{{ $place->district }} {{ $place->city }}</td>
+                                            <td>
+                                                {{ $place->count_views }}
+                                            </td>
+                                            <td>
+                                               {{ $place->getRatePlace($place->id) }}
+                                            </td>
+                                        </tr>
+                                    @empty
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

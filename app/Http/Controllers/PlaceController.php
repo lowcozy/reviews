@@ -33,14 +33,55 @@ class PlaceController extends Controller
     }
 
     // hien thi danh sach dia diem 
-    public function list()
+    public function list(Request $request)
     {
-        $places = Place::search();
+        $places = Place::select('*');
+
+        if($request->has('category') && $request->input('category') != 0)
+        {
+          $places = $places->where('category_id', '=', $request->input('category'));
+        }
+
+         if($request->has('incress') && $request->input('incress') == 0)
+        {
+          $places = $places->orderBy('count_views', 'asc');
+        }
+        if($request->has('status'))
+          $places = $places->where('status', $request->input('status'));
+
+        if($request->input('name') !== NULL)
+        {
+          $places = $places->where('name', 'like', '%'.$request->input('name').'%');      
+        }
+
+        if($request->has('number') && $request->input('number') >0)
+        {
+           $places = $places->paginate($request->input('number'));
+        }
+        else
+            $places = $places->paginate(2);
+       
         $categories = Category::where('parent', ">", 0)->get();
         return view('Admin.place.list', [
             'places' => $places,
             'categories' => $categories
         ]);
+    }
+
+    public function active($id)
+    {   
+      $place = Place::find($id);
+      $place->status = 1;
+      $place->save();
+      return redirect()->back()->with('active', 'Đã kích hoạt địa điểm thành công');
+    }
+
+     public function lock($id)
+    {   
+      $place = Place::find($id);
+      $place->status = 0;
+      $place->save();
+      return redirect()->back()->with('ban', 'Đã khóa địa điểm');
     }
 
     public function tableAjax()

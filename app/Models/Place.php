@@ -9,6 +9,14 @@ class Place extends Model
     protected $table = "places";
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
+    public function getRateAttribute(){
+            $star = 0.0;
+            $rate = \App\Models\Rate::where('place_id', $this->id)->avg('star');
+            if($rate !== null)
+            $star = $rate;
+            return $star;
+    }
+
       public function images()
     {
         return $this->hasMany('App\Models\Image');
@@ -58,7 +66,6 @@ class Place extends Model
 
   public static function search($params =[])
   {
-
     //dd($params);
     $places = self::select('places.*');
 

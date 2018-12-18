@@ -27,9 +27,28 @@
                     </div>
                 </div>
                 <ul class="nav">
+                     <li{{ strpos(Route::currentRouteName(), 'admin.dashboard') ? ' class=active' : '' }}>
+                        <a data-toggle="collapse" href="#dashboard">
+                            <i class="material-icons">dashboard</i>
+                            <p> Thống kê
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                       <div class="collapse" id="dashboard">
+                            <ul class="nav">
+                                <li {{ (Route::is('admin.dashboard')) ? ' class=active' : '' }}>
+                                    <a href="{{ route('admin.dashboard') }}">
+                                        <span class="sidebar-mini"> List </span>
+                                        <span class="sidebar-normal"> Danh sách </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                      <li{{ strpos(Route::currentRouteName(), 'place') ? ' class=active' : '' }}>
                         <a data-toggle="collapse" href="#place">
-                            <i class="material-icons">image</i>
+                            <i class="material-icons">place</i>
                             <p> Địa điểm
                                 <b class="caret"></b>
                             </p>
@@ -73,7 +92,7 @@
 
                     <li{{ strpos(Route::currentRouteName(), 'category') ? ' class=active' : '' }}>
                         <a data-toggle="collapse" href="#category">
-                            <i class="material-icons">image</i>
+                            <i class="material-icons">category</i>
                             <p> Category
                                 <b class="caret"></b>
                             </p>
